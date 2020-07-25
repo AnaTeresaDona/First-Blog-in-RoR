@@ -1,17 +1,22 @@
-<h1>Posts</h1>
+<h1 class="text-primary">{ Posts }</h1>
 
-
-
-
+<table class="table">
+  <tr>
+    <th>Titulo</th>
+    <th>Fecha de ingreso</>
+    <th>Contenido</th>
+    <th>Imagen</th>
+  </tr>   
 
 <% @posts.each do |post|%>
 
-<div>
-    <h3><%=post.title%></h3>
-    <p><%=post.created_at.strftime("%F")%></p>
-    <p><%=image_tag(post.image_url)%></p>
-    <p><%=post.content%></p>
-</div>
+<tr>
+    <td><%=post.title%></td>
+    <td><%=post.created_at.strftime("%F")%></td>
+    <td><%=post.image_url%></td>
+    <td><%=post.content%></td>
+</tr>
 
 <%end%>
+</table>
 
